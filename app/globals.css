@@ -1323,11 +1323,13 @@ h5 {
 }
 
 /* Calendly */
-.calendly-inline-widget {
+.calendly-embed-frame {
+  display: block;
+  width: 100%;
   min-width: 320px;
+  min-height: 700px;
   height: 700px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  background: var(--white);
 }
 
 @media (max-width: 1024px) {
@@ -1398,8 +1400,11 @@ h5 {
   }
 }
 
-.calendly-inline-widget {
-  min-height: 520px;
+@media (max-width: 640px) {
+  .calendly-embed-frame {
+    min-height: 620px;
+    height: 620px;
+  }
 }
 
 @media (max-width: 640px) {

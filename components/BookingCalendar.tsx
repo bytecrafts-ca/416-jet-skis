@@ -52,7 +52,18 @@ export function BookingCalendar({ id = "book" }: BookingCalendarProps) {
           <CalendlyEmbed />
         </div>
 
-        <p className="mx-auto mt-6 max-w-xl text-center text-sm text-[var(--gray-400)]">
+        <p className="mx-auto mt-4 text-center text-sm">
+          <a
+            href={siteConfig.calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-cyan-dark hover:text-cyan"
+          >
+            Open booking page in a new tab
+          </a>
+        </p>
+
+        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-[var(--gray-400)]">
           Or call{" "}
           <a href={`tel:${siteConfig.contact.phoneTel}`} className="font-semibold text-cyan-dark">
             {siteConfig.contact.phone}

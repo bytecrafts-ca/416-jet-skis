@@ -1,17 +1,4 @@
-/**
- * Calendly integration architecture for 416 Jet Skis
- *
- * Flow:
- * 1. Set NEXT_PUBLIC_CALENDLY_URL in .env (client's main booking link)
- * 2. Optional per-package URLs via NEXT_PUBLIC_CALENDLY_URL_1HR / _2HR
- * 3. BookButton / BookLink use popup widget OR /book page inline embed
- * 4. CalendlyProvider loads widget script once per session (app/layout)
- *
- * Client setup checklist:
- * - Create Calendly event types (1 Hour Ride, 2 Hour Ride)
- * - Enable Calendly embed + popup in Settings → Share
- * - Paste URLs into .env.local
- */
+import { siteConfig } from "@/lib/site";
 
 export type CalendlyEventKey = "default" | "1HR" | "2HR";
 
@@ -21,20 +8,22 @@ const ENV_KEYS: Record<CalendlyEventKey, string> = {
   "2HR": "NEXT_PUBLIC_CALENDLY_URL_2HR",
 };
 
-const PLACEHOLDER = "https://calendly.com/your-account/ride";
-
 export function getCalendlyUrl(key: CalendlyEventKey = "default"): string {
   const envKey = ENV_KEYS[key];
   const specific = process.env[envKey];
   const fallback = process.env.NEXT_PUBLIC_CALENDLY_URL;
 
-  const url = specific || fallback || PLACEHOLDER;
-  return url;
+  return specific || fallback || siteConfig.calendlyUrl;
+}
+
+export function getCalendlyEmbedUrl(key: CalendlyEventKey = "default"): string {
+  const base = getCalendlyUrl(key).replace(/\/$/, "");
+  return `${base}?embed_type=Inline`;
 }
 
 export function isCalendlyConfigured(): boolean {
-  const url = process.env.NEXT_PUBLIC_CALENDLY_URL;
-  return Boolean(url && !url.includes("your-account"));
+  const url = getCalendlyUrl();
+  return Boolean(url && url.includes("calendly.com/"));
 }
 
 /** UTM params for analytics (optional) */

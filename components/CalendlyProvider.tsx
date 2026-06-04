@@ -7,7 +7,7 @@ export function CalendlyProvider() {
   return (
     <Script
       src={calendlyScriptUrl}
-      strategy="lazyOnload"
+      strategy="afterInteractive"
       id="calendly-widget-script"
     />
   );

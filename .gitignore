@@ -7,3 +7,4 @@ out
 public/WhatsApp*
 *.pem
 npm-debug.log*
+.vercel

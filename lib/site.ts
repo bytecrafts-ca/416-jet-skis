@@ -13,6 +13,7 @@ export const siteConfig = {
   description: "Jet ski rentals on Lake Ontario — Toronto.",
   heroImage: "/jet-ski.jpg",
   logoImage: "/logo.jpeg",
+  calendlyUrl: "https://calendly.com/416jetskis/rental",
   url: "https://www.instagram.com/416jetskis/",
   contact: {
     phone: "416 305 5187",
