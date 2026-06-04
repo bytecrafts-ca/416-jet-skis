@@ -18,7 +18,13 @@ export function getCalendlyUrl(key: CalendlyEventKey = "default"): string {
 
 export function getCalendlyEmbedUrl(key: CalendlyEventKey = "default"): string {
   const base = getCalendlyUrl(key).replace(/\/$/, "");
-  return `${base}?embed_type=Inline`;
+  const params = new URLSearchParams({
+    embed_type: "Inline",
+    embed_domain: siteConfig.siteUrl.replace(/^https?:\/\//, ""),
+    hide_event_type_details: "1",
+    hide_gdpr_banner: "1",
+  });
+  return `${base}?${params.toString()}`;
 }
 
 export function isCalendlyConfigured(): boolean {

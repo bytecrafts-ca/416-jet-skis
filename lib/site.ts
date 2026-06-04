@@ -14,6 +14,7 @@ export const siteConfig = {
   heroImage: "/jet-ski.jpg",
   logoImage: "/logo.jpeg",
   calendlyUrl: "https://calendly.com/416jetskis/rental",
+  siteUrl: "https://416-jet-skis.vercel.app",
   url: "https://www.instagram.com/416jetskis/",
   contact: {
     phone: "416 305 5187",

@@ -1325,10 +1325,11 @@ h5 {
 /* Calendly */
 .calendly-embed-frame {
   display: block;
-  width: 100%;
-  min-width: 320px;
-  min-height: 700px;
-  height: 700px;
+  width: 100% !important;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 750px;
+  height: 750px;
   background: var(--white);
 }
 

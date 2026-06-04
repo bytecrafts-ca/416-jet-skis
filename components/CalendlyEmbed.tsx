@@ -12,7 +12,7 @@ export function CalendlyEmbed({ className = "" }: CalendlyEmbedProps) {
       src={embedSrc}
       title="Book your jet ski rental with 416 Jet Skis"
       className={`calendly-embed-frame ${className}`}
-      loading="lazy"
+      width="100%"
       allow="fullscreen"
     />
   );
