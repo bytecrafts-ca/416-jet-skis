@@ -20,7 +20,7 @@ export function BookingCalendar({ id = "book" }: BookingCalendarProps) {
               Pick your <span className="accent">date & time</span>
             </>
           }
-          subtitle={siteConfig.jetSki.label}
+          subtitle="Pick your model when you book · hourly rentals"
         />
 
         {!configured && (

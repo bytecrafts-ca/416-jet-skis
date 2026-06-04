@@ -25,12 +25,13 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/416jetskis/",
     tiktok: "https://www.tiktok.com/@416jetskis",
   },
-  jetSki: {
-    name: "2026 Sea-Doo GTI",
-    power: "130 / 170",
-    speakers: "Built-in speakers",
-    label: "2026 Sea-Doo GTI 130/170 with speakers",
-  },
+  fleet: [
+    "2026 Sea-Doo GTI 130",
+    "2026 Sea-Doo GTI 170",
+    "Sea-Doo GTR 230",
+    "2026 Sea-Doo RXP-X 300",
+  ] as const,
+  fleetNote: "Built-in speakers on select models.",
   rideHighlights: [
     { title: "Skyline", description: "Views of downtown from the water." },
     { title: "Bluffs", description: "Scarborough Bluffs on Lake Ontario." },
@@ -38,7 +39,7 @@ export const siteConfig = {
   ] as const,
   deliveryNote: "Launch points around Toronto & Ontario — ask when you book.",
   whatWeOffer: [
-    "Well-maintained Sea-Doo GTI",
+    "Well-maintained Sea-Doo fleet",
     "Safety briefing every ride",
     "Flexible rental packages",
   ] as const,
@@ -93,8 +94,8 @@ export const navLinks = [
 
 export const features = [
   {
-    title: `${siteConfig.jetSki.name} ${siteConfig.jetSki.power}`,
-    description: "Built-in speakers.",
+    title: "Sea-Doo fleet",
+    description: "GTI, GTR & RXP-X — 130 to 300 HP.",
     icon: "jetski",
   },
   {

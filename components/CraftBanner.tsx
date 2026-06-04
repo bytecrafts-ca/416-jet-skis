@@ -2,7 +2,7 @@ import { Music } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
 export function CraftBanner() {
-  const { jetSki } = siteConfig;
+  const { fleet, fleetNote } = siteConfig;
 
   return (
     <section className="border-b border-[var(--gray-100)] bg-white py-10">
@@ -11,17 +11,18 @@ export function CraftBanner() {
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[var(--cyan-glow)] text-cyan-dark">
             <Music className="h-7 w-7" aria-hidden />
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <p className="text-xs font-bold uppercase tracking-widest text-cyan-dark">
-              Our jet ski
+              Our fleet
             </p>
-            <h2 className="mt-1 font-display text-2xl font-bold text-navy">
-              {jetSki.name}{" "}
-              <span className="font-sans text-lg font-semibold text-[var(--gray-500)]">
-                {jetSki.power} HP
-              </span>
-            </h2>
-            <p className="mt-2 text-[var(--gray-500)]">{jetSki.speakers}</p>
+            <ul className="mt-2 space-y-1 font-display text-lg font-bold leading-snug text-navy sm:text-xl">
+              {fleet.map((model) => (
+                <li key={model}>{model}</li>
+              ))}
+            </ul>
+            {fleetNote ? (
+              <p className="mt-3 text-sm text-[var(--gray-500)]">{fleetNote}</p>
+            ) : null}
           </div>
         </div>
       </div>

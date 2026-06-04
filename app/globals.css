@@ -343,8 +343,8 @@ h5 {
   border-radius: 100px;
   font-size: clamp(0.65rem, 2.5vw, 0.75rem);
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
   color: var(--cyan-muted);
   margin-bottom: 1.25rem;
 }
@@ -363,6 +363,7 @@ h5 {
   margin-bottom: 1rem;
   max-width: 100%;
   line-height: 1.08;
+  text-transform: capitalize;
 }
 
 .hero h1 .accent {
@@ -376,6 +377,7 @@ h5 {
   max-width: 540px;
   line-height: 1.75;
   margin-bottom: 2rem;
+  text-transform: capitalize;
 }
 
 .hero-actions {
