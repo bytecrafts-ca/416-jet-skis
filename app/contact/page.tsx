@@ -2,7 +2,6 @@ import { BookingCalendar } from "@/components/BookingCalendar";
 import { ContactLinks } from "@/components/ContactLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
-import { ReviewsSection } from "@/components/ReviewsSection";
 import { breadcrumbJsonLd, createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -33,8 +32,6 @@ export default function ContactPage() {
       />
 
       <BookingCalendar id="schedule" />
-
-      <ReviewsSection />
 
       <section className="section section-white">
         <div className="container-jetti max-w-2xl">
