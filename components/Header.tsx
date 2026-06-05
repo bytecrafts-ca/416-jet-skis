@@ -34,11 +34,11 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-[1000] border-b border-black/5 bg-white/95 px-8 backdrop-blur-xl transition-shadow ${
+        className={`fixed inset-x-0 top-0 z-[1000] border-b border-black/5 bg-white/95 backdrop-blur-xl transition-shadow ${
           scrolled ? "shadow-[0_1px_12px_rgba(10,22,40,0.06)]" : ""
         }`}
       >
-        <div className="mx-auto flex h-[68px] max-w-[1200px] items-center justify-between">
+        <div className="container-jetti flex h-[var(--header-h)] items-center justify-between gap-4">
           <Link
             href="/"
             className="site-logo flex shrink-0 items-center no-underline"
@@ -49,7 +49,7 @@ export function Header() {
               alt=""
               width={160}
               height={48}
-              className="h-11 w-auto max-w-[min(160px,42vw)] object-contain object-left"
+              className="site-logo-img"
               priority
             />
           </Link>

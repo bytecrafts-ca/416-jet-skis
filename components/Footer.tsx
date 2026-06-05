@@ -11,7 +11,7 @@ function TikTokIcon({ className }: { className?: string }) {
 }
 
 export function Footer() {
-  const { contact, social } = siteConfig;
+  const { contact, social, instagramHandle, tiktokHandle } = siteConfig;
 
   return (
     <footer className="footer">
@@ -64,9 +64,6 @@ export function Footer() {
                 <Link href={href}>{label}</Link>
               </li>
             ))}
-            <li>
-              <Link href="/contact#faq">FAQ</Link>
-            </li>
           </ul>
         </div>
 
@@ -87,18 +84,29 @@ export function Footer() {
 
         <div className="footer-links">
           <h4>Follow</h4>
-          <ul>
+          <ul className="footer-follow-list">
             <li>
-              <a href={social.instagram} target="_blank" rel="noopener noreferrer">
-                {siteConfig.instagramHandle}
+              <a
+                href={social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-follow-link"
+              >
+                <Instagram className="h-4 w-4 shrink-0" aria-hidden />
+                {instagramHandle}
               </a>
             </li>
             <li>
-              <a href={social.tiktok} target="_blank" rel="noopener noreferrer">
-                {siteConfig.tiktokHandle}
+              <a
+                href={social.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-follow-link"
+              >
+                <TikTokIcon className="h-4 w-4 shrink-0" aria-hidden />
+                {tiktokHandle}
               </a>
             </li>
-            <li>Toronto, Ontario</li>
           </ul>
         </div>
       </div>
@@ -107,7 +115,11 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </p>
-        <p>
+        <p className="footer-bottom-contact">
+          <a href={`tel:${contact.phoneTel}`} className="text-[var(--gray-400)] hover:text-cyan">
+            {contact.phone}
+          </a>
+          <span aria-hidden> · </span>
           <a href={`mailto:${contact.email}`} className="text-[var(--gray-400)] hover:text-cyan">
             {contact.email}
           </a>

@@ -59,7 +59,7 @@ export default function SafetyPage() {
             <Link href="/#book" className="btn btn-amber shimmer-btn">
               Book your ride
             </Link>
-            <Link href="/contact#faq" className="btn btn-outline inline-flex">
+            <Link href="/faq" className="btn btn-outline inline-flex">
               FAQ
               <ArrowRight className="h-4 w-4" />
             </Link>

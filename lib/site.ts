@@ -6,7 +6,7 @@ export const siteConfig = {
   logoText: "416 JET SKIS",
   instagramHandle: "@416jetskis",
   tiktokHandle: "@416jetskis",
-  tagline: "Jet Ski Rental · Toronto",
+  tagline: "Jet Ski Rental Located in Toronto & Surrounding",
   heroSubtitle: "Premier jet ski rentals on Lake Ontario — book below.",
   homeIntro:
     "Toronto jet ski rentals for first-timers and pros. Safe, simple, unforgettable.",
@@ -17,7 +17,7 @@ export const siteConfig = {
   siteUrl: "https://416-jet-skis.vercel.app",
   url: "https://www.instagram.com/416jetskis/",
   contact: {
-    phone: "416 305 5187",
+    phone: "416-305-5187",
     phoneTel: "+14163055187",
     email: "416jetskis@gmail.com",
   },
@@ -26,18 +26,24 @@ export const siteConfig = {
     tiktok: "https://www.tiktok.com/@416jetskis",
   },
   fleet: [
-    "2026 Sea-Doo GTI 130",
-    "2026 Sea-Doo GTI 170",
-    "Sea-Doo GTR 230",
+    "2026 Sea-Doo GTI SE 130",
+    "2026 Sea-Doo GTI SE 170",
+    "2026 Sea-Doo GTR 230",
     "2026 Sea-Doo RXP-X 300",
   ] as const,
-  fleetNote: "Built-in speakers on select models.",
+  fleetNote: "Built-in speakers on all models.",
   rideHighlights: [
     { title: "Skyline", description: "Views of downtown from the water." },
     { title: "Bluffs", description: "Scarborough Bluffs on Lake Ontario." },
     { title: "Lake Ontario", description: "Toronto waterfront rides." },
   ] as const,
-  deliveryNote: "Launch points around Toronto & Ontario — ask when you book.",
+  deliveryNote:
+    "Launch points at all public boat launches across the GTA — ask when you book.",
+  extendedRental: {
+    title: "Full day or multi-day?",
+    body: "The online calendar is for hourly rides only. For full-day, weekend, or multi-day rentals, contact us — we'll confirm dates, model, and pricing.",
+    bookingHint: "Hourly rides only on this calendar (1 hr, 2 hr, 4 hr & 8 hr).",
+  },
   whatWeOffer: [
     "Well-maintained Sea-Doo fleet",
     "Safety briefing every ride",
@@ -58,7 +64,8 @@ export const siteConfig = {
         title: "Requirements",
         bullets: [
           "Drivers 18+ with photo ID; under-18 passengers need a guardian + waiver.",
-          "PCOC required — or our boating orientation if you don't have one.",
+          "Valid driver's licence (G2 or G) required to drive.",
+          "Orientation provided — we issue your PCOC after our briefing.",
           "PFDs provided; wear and secure at all times.",
         ],
       },
@@ -86,16 +93,42 @@ export const siteConfig = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#book", label: "Book" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/faq", label: "FAQ" },
   { href: "/safety", label: "Safety" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export const pricingRates = [
+  {
+    id: "weekday",
+    label: "Weekdays",
+    items: [
+      { duration: "Hourly", price: 130 },
+      { duration: "4 hours", price: 375 },
+      { duration: "8 hours", price: 550 },
+    ],
+  },
+  {
+    id: "weekend",
+    label: "Weekends",
+    items: [
+      { duration: "Hourly", price: 150 },
+      { duration: "4 hours", price: 450 },
+      { duration: "8 hours", price: 650 },
+    ],
+  },
+] as const;
+
+export const pricingNote =
+  "Need more than 8 hours or multiple days? Full-day and multi-day rentals are arranged by phone or email — not through the online calendar.";
+
 export const features = [
   {
     title: "Sea-Doo fleet",
-    description: "GTI, GTR & RXP-X — 130 to 300 HP.",
+    description: "GTI SE, GTR & RXP-X — 130 to 300 HP.",
     icon: "jetski",
   },
   {
@@ -105,35 +138,47 @@ export const features = [
   },
   {
     title: "Flexible packages",
-    description: "30 min, 1 hr, and more.",
+    description: "1 hr, 2 hr, 4 hr & 8 hr.",
     icon: "calendar",
   },
   {
-    title: "Toronto waterfront",
-    description: "Skyline views on Lake Ontario.",
+    title: "Toronto & GTA",
+    description: "Public launches across the GTA.",
     icon: "delivery",
   },
 ] as const;
 
 export const safetyPoints = [
-  { title: "18+ with ID", description: "Valid photo ID required to drive." },
-  { title: "PCOC or orientation", description: "Boating license or our pre-ride briefing." },
-  { title: "PFDs included", description: "Wear at all times on the water." },
-  { title: "Full briefing", description: "Before every departure." },
+  {
+    title: "18+ with ID",
+    description: "Valid photo ID required to drive.",
+  },
+  {
+    title: "G2/G licence required",
+    description: "Valid driver's licence required to drive.",
+  },
+  {
+    title: "PCOC issued by us",
+    description: "Orientation provided — we issue your PCOC after briefing.",
+  },
+  {
+    title: "PFDs included",
+    description: "Wear at all times on the water.",
+  },
 ] as const;
 
 export const faqs = [
   {
     q: "How do I book?",
-    a: "Use the calendar on this site, call 416 305 5187, or email 416jetskis@gmail.com.",
+    a: "Hourly rides: use the calendar on this site. Full-day, weekend, or multi-day rentals: call 416-305-5187 or email 416jetskis@gmail.com — those longer packages aren't booked online.",
   },
   {
     q: "Do I need a boating license?",
-    a: "Yes — a valid PCOC. No card? We provide a boating safety orientation before your ride.",
+    a: "Yes — a valid PCOC is required. We provide orientation and issue your PCOC after our briefing.",
   },
   {
     q: "What's the minimum age?",
-    a: "Drivers must be 18+ with photo ID. Under-18 may ride as passengers with a guardian signing the waiver.",
+    a: "Drivers must be 18+ with photo ID and a valid G2 or G licence. Under-18 may ride as passengers with a guardian signing the waiver.",
   },
   {
     q: "Do I need experience?",
@@ -145,7 +190,7 @@ export const faqs = [
   },
   {
     q: "How long can I rent?",
-    a: "30-minute, 1-hour, and extended options. Up to two riders per ski (weight limits apply).",
+    a: "1 hr, 2 hr, 4 hr, and 8 hr slots — book on the calendar. Full-day or multi-day packages: contact us at 416-305-5187 or 416jetskis@gmail.com. Up to two riders per ski (weight limits apply).",
   },
   {
     q: "Deposit, weather, or plan changes?",

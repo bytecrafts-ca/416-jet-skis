@@ -109,10 +109,25 @@ h5 {
 }
 
 .container-jetti {
+  width: 100%;
   max-width: var(--container);
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+.site-logo {
+  line-height: 0;
+}
+
+.site-logo-img {
+  display: block;
+  height: clamp(2.5rem, 6vw, 3rem);
+  width: auto;
+  max-width: min(12rem, 40vw);
+  object-fit: contain;
+  object-position: left center;
 }
 
 /* Buttons */
@@ -316,11 +331,7 @@ h5 {
 .hero-inner {
   position: relative;
   z-index: 2;
-  width: 100%;
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 2rem 1rem;
-  box-sizing: border-box;
+  padding-bottom: 1rem;
 }
 
 .hero-text {
@@ -950,6 +961,79 @@ h5 {
   margin: 0 auto;
 }
 
+.pricing-rates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pricing-rate-card h3 {
+  font-size: 1.35rem;
+  margin: 0 0 1.25rem;
+  color: var(--navy);
+}
+
+.pricing-rate-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pricing-rate-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.95rem;
+  color: var(--gray-600);
+}
+
+.pricing-rate-list li:last-child {
+  border-bottom: 0;
+}
+
+.pricing-rate-list strong {
+  font-family: var(--font-display), serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.pricing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.booking-contact-lines {
+  max-width: 28rem;
+  margin: 1.25rem auto 0;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--gray-500);
+}
+
+.footer-follow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-bottom-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
 .price-card {
   background: var(--white);
   border: 1px solid var(--gray-100);
@@ -995,6 +1079,11 @@ h5 {
   line-height: 1;
 }
 
+.price-amount-sm {
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  line-height: 1.15;
+}
+
 .price-unit {
   font-size: 0.82rem;
   color: var(--gray-400);
@@ -1020,6 +1109,87 @@ h5 {
   content: "✓";
   color: var(--green);
   font-weight: 800;
+}
+
+.pricing-footnote {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--gray-500);
+}
+
+.price-card-extended {
+  border-color: var(--amber);
+  background: linear-gradient(180deg, rgba(255, 159, 28, 0.06) 0%, var(--white) 100%);
+}
+
+.extended-rental-callout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.35rem 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 159, 28, 0.45);
+  background: linear-gradient(135deg, rgba(255, 159, 28, 0.12) 0%, rgba(0, 168, 204, 0.08) 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.extended-rental-callout-compact {
+  max-width: 100%;
+  padding: 1.15rem 1.25rem;
+}
+
+.extended-rental-callout-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber-dark);
+  margin-bottom: 0.35rem;
+}
+
+.extended-rental-callout-title {
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.extended-rental-callout-body {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+}
+
+.extended-rental-callout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+@media (min-width: 768px) {
+  .extended-rental-callout:not(.extended-rental-callout-compact) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--container);
+  }
+
+  .extended-rental-callout-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .extended-rental-callout-actions {
+    flex-shrink: 0;
+    justify-content: flex-end;
+  }
 }
 
 /* Location */
@@ -1362,7 +1532,8 @@ h5 {
   .reviews-grid {
     grid-template-columns: 1fr;
   }
-  .pricing-grid {
+  .pricing-grid,
+  .pricing-rates-grid {
     grid-template-columns: 1fr;
   }
   .price-card.featured {
@@ -1390,8 +1561,6 @@ h5 {
     padding-bottom: 3.25rem;
   }
   .hero-inner {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
     padding-bottom: 0.5rem;
   }
   .hero h1 {

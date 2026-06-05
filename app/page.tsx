@@ -38,7 +38,7 @@ export default function HomePage() {
           />
         </div>
         <div className="hero-overlay" />
-        <div className="hero-inner">
+        <div className="hero-inner container-jetti">
           <div className="hero-text">
             <p className="hero-eyebrow">{siteConfig.tagline}</p>
             <h1>
@@ -113,7 +113,7 @@ export default function HomePage() {
                   Briefing <span className="accent">every ride</span>
                 </>
               }
-              subtitle="18+ · PCOC · PFDs included"
+              subtitle="18+ · G2/G · PCOC issued · PFDs included"
             />
             <div className="safety-features">
               {safetyPoints.map((s) => (
@@ -142,13 +142,15 @@ export default function HomePage() {
 
       <section className="section section-white">
         <div className="container-jetti text-center">
-          <p className="location-detail">Toronto, Ontario</p>
-          <p className="mt-2 text-sm text-[var(--gray-500)]">
-            {siteConfig.deliveryNote}
-          </p>
-          <Link href="/contact#faq" className="btn btn-outline mt-6 inline-flex">
-            FAQ
-          </Link>
+          <p className="location-detail">{siteConfig.deliveryNote}</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/pricing" className="btn btn-outline inline-flex">
+              View pricing
+            </Link>
+            <Link href="/faq" className="btn btn-outline inline-flex">
+              FAQ
+            </Link>
+          </div>
         </div>
       </section>
     </>

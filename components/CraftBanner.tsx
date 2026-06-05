@@ -1,4 +1,4 @@
-import { Music } from "lucide-react";
+import { Ship } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
 export function CraftBanner() {
@@ -9,7 +9,7 @@ export function CraftBanner() {
       <div className="container-jetti">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[var(--radius-lg)] border border-[var(--gray-100)] bg-[var(--off-white)] px-8 py-8 text-center shadow-[var(--shadow-sm)] sm:flex-row sm:text-left">
           <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[var(--cyan-glow)] text-cyan-dark">
-            <Music className="h-7 w-7" aria-hidden />
+            <Ship className="h-7 w-7" aria-hidden />
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-xs font-bold uppercase tracking-widest text-cyan-dark">

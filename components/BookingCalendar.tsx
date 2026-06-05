@@ -1,4 +1,5 @@
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import { ExtendedRentalCallout } from "@/components/ExtendedRentalCallout";
 import { SectionHeader } from "@/components/SectionHeader";
 import { isCalendlyConfigured } from "@/lib/calendly";
 import { siteConfig } from "@/lib/site";
@@ -9,6 +10,7 @@ interface BookingCalendarProps {
 
 export function BookingCalendar({ id = "book" }: BookingCalendarProps) {
   const configured = isCalendlyConfigured();
+  const { contact } = siteConfig;
 
   return (
     <section className="section section-gray" id={id}>
@@ -20,8 +22,10 @@ export function BookingCalendar({ id = "book" }: BookingCalendarProps) {
               Pick your <span className="accent">date & time</span>
             </>
           }
-          subtitle="Pick your model when you book · hourly rentals"
+          subtitle={siteConfig.extendedRental.bookingHint}
         />
+
+        <ExtendedRentalCallout variant="compact" className="mb-8" />
 
         {!configured && (
           <div
@@ -35,13 +39,10 @@ export function BookingCalendar({ id = "book" }: BookingCalendarProps) {
               activate scheduling.
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3">
-              <a href={`tel:${siteConfig.contact.phoneTel}`} className="btn btn-outline">
-                {siteConfig.contact.phone}
+              <a href={`tel:${contact.phoneTel}`} className="btn btn-outline">
+                {contact.phone}
               </a>
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="btn btn-outline"
-              >
+              <a href={`mailto:${contact.email}`} className="btn btn-outline">
                 Email us
               </a>
             </div>
@@ -63,16 +64,20 @@ export function BookingCalendar({ id = "book" }: BookingCalendarProps) {
           </a>
         </p>
 
-        <p className="mx-auto mt-4 max-w-xl text-center text-sm text-[var(--gray-400)]">
-          Or call{" "}
-          <a href={`tel:${siteConfig.contact.phoneTel}`} className="font-semibold text-cyan-dark">
-            {siteConfig.contact.phone}
-          </a>
-          {" · "}
-          <a href={`mailto:${siteConfig.contact.email}`} className="font-semibold text-cyan-dark">
-            {siteConfig.contact.email}
-          </a>
-        </p>
+        <div className="booking-contact-lines">
+          <p>
+            Call us at{" "}
+            <a href={`tel:${contact.phoneTel}`} className="font-semibold text-cyan-dark hover:text-cyan">
+              {contact.phone}
+            </a>
+          </p>
+          <p>
+            Email us at{" "}
+            <a href={`mailto:${contact.email}`} className="font-semibold text-cyan-dark hover:text-cyan">
+              {contact.email}
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );
