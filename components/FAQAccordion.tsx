@@ -26,7 +26,9 @@ export function FAQAccordion() {
                 }`}
               />
             </button>
-            {open && <div className="faq-answer">{faq.a}</div>}
+            <div className={`faq-answer ${open ? "" : "faq-answer-collapsed"}`}>
+              {faq.a}
+            </div>
           </div>
         );
       })}

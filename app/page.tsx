@@ -11,8 +11,13 @@ import {
 import { BookingCalendar } from "@/components/BookingCalendar";
 import { CraftBanner } from "@/components/CraftBanner";
 import { HomeAboutTeaser } from "@/components/HomeAboutTeaser";
+import { JsonLd } from "@/components/JsonLd";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { SectionHeader } from "@/components/SectionHeader";
+import { faqJsonLd } from "@/lib/seo";
 import { features, safetyPoints, siteConfig } from "@/lib/site";
+
+export { rootMetadata as metadata } from "@/lib/seo";
 
 const heroImage = siteConfig.heroImage;
 
@@ -26,6 +31,7 @@ const featureIcons = {
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={faqJsonLd()} />
       <header className="hero">
         <div className="hero-bg">
           <Image
@@ -42,9 +48,15 @@ export default function HomePage() {
           <div className="hero-text">
             <p className="hero-eyebrow">{siteConfig.tagline}</p>
             <h1>
-              Book your <span className="accent">water adventure</span>
+              Toronto <span className="accent">jet ski rentals</span>
             </h1>
-            <p className="hero-sub">{siteConfig.heroSubtitle}</p>
+            <p className="hero-sub">{siteConfig.seo.defaultDescription}</p>
+            <a href="#reviews" className="hero-proof" aria-label={`${siteConfig.seo.averageRating} out of 5 stars — read customer reviews`}>
+              <span className="hero-proof-stars" aria-hidden>
+                {"★".repeat(siteConfig.seo.averageRating)}
+              </span>
+              <span className="hero-proof-rating">{siteConfig.seo.averageRating}.0</span>
+            </a>
             <div className="hero-actions">
               <a href="#book" className="btn btn-amber shimmer-btn">
                 Book Your Ride
@@ -153,6 +165,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ReviewsSection />
     </>
   );
 }

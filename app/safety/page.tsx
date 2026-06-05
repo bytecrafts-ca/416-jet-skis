@@ -2,19 +2,35 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ContactLinks } from "@/components/ContactLinks";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { SafetyRegulations } from "@/components/SafetyRegulations";
 import { SectionHeader } from "@/components/SectionHeader";
+import { breadcrumbJsonLd, createPageMetadata } from "@/lib/seo";
 import { safetyPoints, siteConfig } from "@/lib/site";
 
-export const metadata = {
-  title: "Safety",
-  description: "Safety rules for 416 Jet Skis rentals on Lake Ontario.",
-};
+export const metadata = createPageMetadata({
+  title: "Safety Rules — Toronto Jet Ski Rentals",
+  description:
+    "Safety requirements for 416 Jet Skis on Lake Ontario: 18+ with ID, G2/G licence, PCOC briefing, PFDs, no alcohol, weather policy, and on-water rules.",
+  path: "/safety",
+  keywords: [
+    "jet ski safety Toronto",
+    "PCOC jet ski rental",
+    "jet ski rental requirements Ontario",
+    "PFD jet ski Lake Ontario",
+  ],
+});
 
 export default function SafetyPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Safety", path: "/safety" },
+        ])}
+      />
       <PageHero
         title={
           <>

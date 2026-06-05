@@ -2,13 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { ContactLinks } from "@/components/ContactLinks";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
+import { breadcrumbJsonLd, createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-export const metadata = {
-  title: "About",
-  description: "About 416 Jet Skis — Toronto jet ski rentals on Lake Ontario.",
-};
+export const metadata = createPageMetadata({
+  title: "About — Locally Owned Toronto Jet Ski Rentals",
+  description:
+    "416 Jet Skis is a locally owned Toronto jet ski rental company on Lake Ontario. Sea-Doo fleet, safety briefing every ride, groups and events welcome.",
+  path: "/about",
+  keywords: ["about 416 jet skis", "local jet ski rental Toronto", "Toronto water sports rental"],
+});
 
 const aboutBullets = [
   ...siteConfig.whatWeOffer,
@@ -18,6 +23,12 @@ const aboutBullets = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <PageHero
         title={
           <>

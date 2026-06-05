@@ -1,0 +1,62 @@
+# 416 Jet Skis
+
+> Toronto jet ski rentals on Lake Ontario. Locally owned Sea-Doo fleet with safety briefing included on every ride.
+
+## Business
+
+- Name: 416 Jet Skis
+- Service: Personal watercraft (jet ski / Sea-Doo) rentals
+- Location: Toronto, Ontario, Canada — Lake Ontario & GTA public boat launches
+- Phone: 416-305-5187
+- Email: 416jetskis@gmail.com
+- Website: https://416-jet-skis.vercel.app
+- Instagram: https://www.instagram.com/416jetskis/
+- TikTok: https://www.tiktok.com/@416.jet.ski.renta
+
+## Fleet
+
+- 2026 Sea-Doo GTI SE 130
+- 2026 Sea-Doo GTI SE 170
+- 2026 Sea-Doo GTR 230
+- 2026 Sea-Doo RXP-X 300
+- Built-in speakers on all models
+
+## Pricing (CAD)
+
+Weekdays: $130/hr · $375/4hr · $550/8hr
+Weekends: $150/hr · $450/4hr · $650/8hr
+Longer rentals (12hr, daily, multi-day, weekly, monthly): contact directly — not available on the online calendar.
+
+## Booking
+
+- Hourly rentals (1hr, 2hr, 4hr, 8hr): book online at /book or /#book
+- Full-day, weekend, multi-day: call 416-305-5187 or email 416jetskis@gmail.com
+
+## Requirements
+
+- Drivers: 18+ with valid photo ID and G2 or G driver's licence
+- PCOC (boating licence): orientation provided — issued after safety briefing
+- PFDs (life jackets) included and required at all times
+- Under-18 passengers allowed with guardian + signed waiver
+
+## Safety
+
+- Zero tolerance for alcohol or drugs on the water
+- Obey speed limits, no-wake zones, stay 30m from swimmers
+- Weather cancellations for safety — rescheduling offered
+- Refundable deposit required at booking
+
+## Key pages
+
+- Home & booking: /
+- Pricing: /pricing
+- FAQ: /faq
+- Safety rules: /safety
+- Gallery: /gallery
+- About: /about
+- Contact: /contact
+- Book online: /book
+
+## Sitemap
+
+https://416-jet-skis.vercel.app/sitemap.xml

@@ -1,0 +1,93 @@
+# 416 Jet Skis — Full reference for AI systems
+
+## Summary
+
+416 Jet Skis is a locally owned jet ski rental business serving Toronto and the Greater Toronto Area on Lake Ontario. Customers can book hourly Sea-Doo rentals online or arrange longer packages by phone or email. Every rental includes a safety briefing, PFDs, and orientation (PCOC issued after briefing).
+
+## Contact & booking
+
+| Channel | Details |
+|---------|---------|
+| Phone | 416-305-5187 |
+| Email | 416jetskis@gmail.com |
+| Online booking | https://416-jet-skis.vercel.app/book |
+| Instagram | @416jetskis |
+| TikTok | @416.jet.ski.renta |
+
+## Service area
+
+Toronto, GTA, Lake Ontario waterfront, Scarborough Bluffs, and public boat launches across the Greater Toronto Area. Launch points confirmed at booking.
+
+## Fleet & equipment
+
+All units are 2026 Sea-Doo models: GTI SE 130, GTI SE 170, GTR 230, RXP-X 300. Built-in speakers on every ski. Up to two riders per ski (weight limits apply).
+
+## Pricing (Canadian dollars)
+
+**Weekdays:** Hourly $130 · 4 hours $375 · 8 hours $550
+**Weekends:** Hourly $150 · 4 hours $450 · 8 hours $650
+
+Also available by direct contact (not on online calendar): 1hr, 2hr, 4hr, 8hr, 12hr, 1 day, 2 day, 3 day, 5 day, 1 week, 1 month.
+
+## Frequently asked questions
+
+**How do I book?**
+Hourly rides: use the calendar on the website. Full-day, weekend, or multi-day: call 416-305-5187 or email 416jetskis@gmail.com.
+
+**Do I need a boating license?**
+Yes — a valid PCOC is required. 416 Jet Skis provides orientation and issues your PCOC after the safety briefing.
+
+**What's the minimum age?**
+Drivers must be 18+ with photo ID and a valid G2 or G licence. Under-18 may ride as passengers with a guardian signing the waiver.
+
+**Do I need experience?**
+No. A full safety and operations briefing is provided before every ride.
+
+**Are life jackets included?**
+Yes — Transport Canada–approved PFDs, worn at all times. Bring photo ID and a card for your deposit.
+
+**How long can I rent?**
+1hr, 2hr, 4hr, and 8hr slots book online. Longer packages: contact 416-305-5187 or 416jetskis@gmail.com.
+
+**Deposit, weather, or plan changes?**
+Refundable deposit at booking. Bad weather leads to rescheduling for safety. Contact ASAP to cancel or change plans.
+
+## Safety highlights
+
+- 18+ with valid photo ID to drive
+- G2 or G driver's licence required
+- PCOC issued after orientation briefing
+- PFDs included — mandatory on the water
+- No alcohol or drugs — zero tolerance
+- Stay 30m from swimmers at speed; obey no-wake zones
+- Kill-switch lanyard required; stay in designated areas
+
+## Customer reviews (5/5 average)
+
+- "Great time on water. The equipment is well maintained and the owner is chill and accommodating." — Babur Urya
+- "Quick response. Great prices. Helps you on the waters and gives you all the safety advice." — Qaise K.
+- "Professional and easy to get a jet ski rental... very accommodating with timing and location." — Ahmad Karimzada
+
+## Ride highlights
+
+- Downtown Toronto skyline views from the water
+- Scarborough Bluffs on Lake Ontario
+- Toronto waterfront rides
+
+## Site structure
+
+- / — Home, hero, booking calendar, features, safety overview
+- /pricing — Weekday and weekend rate tables
+- /faq — Full FAQ accordion
+- /safety — Complete safety rules and requirements
+- /gallery — Photo gallery
+- /about — Brand story and contact
+- /contact — Booking calendar, reviews, contact links
+- /book — Dedicated online booking page
+
+## Technical
+
+- Sitemap: /sitemap.xml
+- Robots: /robots.txt
+- Language: English (Canada)
+- Currency: CAD

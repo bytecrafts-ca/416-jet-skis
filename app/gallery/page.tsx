@@ -1,17 +1,28 @@
 import Image from "next/image";
 import { Instagram } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
+import { breadcrumbJsonLd, createPageMetadata } from "@/lib/seo";
 import { galleryImages, siteConfig } from "@/lib/site";
 
-export const metadata = {
-  title: "Gallery",
-  description: "Photos from 416 Jet Skis — Toronto jet ski rentals on Lake Ontario.",
-};
+export const metadata = createPageMetadata({
+  title: "Gallery — Toronto Jet Ski Photos",
+  description:
+    "Photo gallery of 416 Jet Skis rentals on Lake Ontario — Sea-Doo rides, Scarborough Bluffs, and Toronto waterfront adventures.",
+  path: "/gallery",
+  keywords: ["jet ski photos Toronto", "Sea-Doo rental gallery", "Lake Ontario jet ski pictures"],
+});
 
 export default function GalleryPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Gallery", path: "/gallery" },
+        ])}
+      />
       <PageHero
         title={
           <>
