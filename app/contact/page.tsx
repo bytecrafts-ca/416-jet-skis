@@ -1,6 +1,7 @@
 import { BookingCalendar } from "@/components/BookingCalendar";
 import { ContactLinks } from "@/components/ContactLinks";
 import { PageHero } from "@/components/PageHero";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
 export const metadata = {
   title: "Contact",
@@ -20,6 +21,8 @@ export default function ContactPage() {
       />
 
       <BookingCalendar id="schedule" />
+
+      <ReviewsSection />
 
       <section className="section section-white">
         <div className="container-jetti max-w-2xl">
