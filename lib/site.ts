@@ -5,7 +5,7 @@ export const siteConfig = {
   name: "416 Jet Skis",
   logoText: "416 JET SKIS",
   instagramHandle: "@416jetskis",
-  tiktokHandle: "@416jetskis",
+  tiktokHandle: "@416.jet.ski.renta",
   tagline: "Jet Ski Rental Located in Toronto & Surrounding",
   heroSubtitle: "Premier jet ski rentals on Lake Ontario — book below.",
   homeIntro:
@@ -23,7 +23,7 @@ export const siteConfig = {
   },
   social: {
     instagram: "https://www.instagram.com/416jetskis/",
-    tiktok: "https://www.tiktok.com/@416jetskis",
+    tiktok: "https://www.tiktok.com/@416.jet.ski.renta",
   },
   fleet: [
     "2026 Sea-Doo GTI SE 130",
@@ -43,6 +43,8 @@ export const siteConfig = {
     title: "Full day or multi-day?",
     body: "The online calendar is for hourly rides only. For full-day, weekend, or multi-day rentals, contact us — we'll confirm dates, model, and pricing.",
     bookingHint: "Hourly rides only on this calendar (1 hr, 2 hr, 4 hr & 8 hr).",
+    availabilityNote:
+      "1 hr, 2 hr, 4 hr, 8 hr, 12 hr, 1 day, 2 day, 3 day, 5 day, 1 week & 1 month rentals also available — contact us to book.",
   },
   whatWeOffer: [
     "Well-maintained Sea-Doo fleet",
@@ -128,7 +130,7 @@ export const pricingNote =
 export const features = [
   {
     title: "Sea-Doo fleet",
-    description: "GTI SE, GTR & RXP-X — 130 to 300 HP.",
+    description: "GTI SE, GTR & RXP-X — 130 HP to 300 HP.",
     icon: "jetski",
   },
   {
@@ -138,7 +140,7 @@ export const features = [
   },
   {
     title: "Flexible packages",
-    description: "1 hr, 2 hr, 4 hr & 8 hr.",
+    description: "1 hr, 2 hr, 4 hr, 8 hr, 12 hr, daily & longer.",
     icon: "calendar",
   },
   {

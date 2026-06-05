@@ -26,6 +26,9 @@ export function ExtendedRentalCallout({
         <p className="extended-rental-callout-body">
           {isCompact ? extendedRental.bookingHint : extendedRental.body}
         </p>
+        {isCompact ? (
+          <p className="extended-rental-callout-note">{extendedRental.availabilityNote}</p>
+        ) : null}
       </div>
       <div className="extended-rental-callout-actions">
         <a href={`tel:${contact.phoneTel}`} className="btn btn-amber shimmer-btn">
