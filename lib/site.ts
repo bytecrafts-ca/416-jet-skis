@@ -198,24 +198,6 @@ export const faqs = [
   },
 ] as const;
 
-export const reviews = [
-  {
-    text: "Great time on water. The equipment is well maintained and the owner is chill and accommodating.",
-    author: "Babur Urya",
-    rating: 5,
-  },
-  {
-    text: "Quick response. Great prices. Helps you on the waters and gives you all the safety advice.",
-    author: "Qaise K.",
-    rating: 5,
-  },
-  {
-    text: "Professional and easy to get a jet ski rental. I rented two jet skis for my best friend's birthday. The owner was very accommodating with the timing and location. I'll be using this again in a few weeks.",
-    author: "Ahmad Karimzada",
-    rating: 5,
-  },
-] as const;
-
 export const galleryImages = [
   { src: "/gallery/02.jpeg", alt: "Jet ski on the water — 416 Jet Skis" },
   { src: "/gallery/03.jpeg", alt: "Sea-Doo on the lift — 416 Jet Skis" },

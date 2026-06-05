@@ -3,25 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { navLinks, siteConfig } from "@/lib/site";
 
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const closeMenu = useCallback(() => setOpen(false), []);
-  const toggleMenu = useCallback(() => setOpen((prev) => !prev), []);
-
-  useEffect(() => {
-    // Clear legacy scroll-lock inline styles from a previous overscroll experiment
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.width = "";
-    document.body.style.overflow = "";
-    delete document.body.dataset.scrollY;
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -31,48 +19,11 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    closeMenu();
-  }, [pathname, closeMenu]);
-
-  useEffect(() => {
-    document.body.classList.toggle("mobile-nav-open", open);
-    if (!open) {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      document.body.style.overflow = "";
-      delete document.body.dataset.scrollY;
-    }
+    document.body.style.overflow = open ? "hidden" : "";
     return () => {
-      document.body.classList.remove("mobile-nav-open");
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
       document.body.style.overflow = "";
-      delete document.body.dataset.scrollY;
     };
   }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeMenu();
-    };
-
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open, closeMenu]);
-
-  useEffect(() => {
-    const media = window.matchMedia("(min-width: 1024px)");
-    const onChange = () => {
-      if (media.matches) closeMenu();
-    };
-
-    media.addEventListener("change", onChange);
-    return () => media.removeEventListener("change", onChange);
-  }, [closeMenu]);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -83,7 +34,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`site-header fixed inset-x-0 top-0 z-[1100] border-b border-black/5 bg-white/95 backdrop-blur-xl transition-shadow ${
+        className={`fixed inset-x-0 top-0 z-[1000] border-b border-black/5 bg-white/95 backdrop-blur-xl transition-shadow ${
           scrolled ? "shadow-[0_1px_12px_rgba(10,22,40,0.06)]" : ""
         }`}
       >
@@ -92,7 +43,6 @@ export function Header() {
             href="/"
             className="site-logo flex shrink-0 items-center no-underline"
             aria-label={siteConfig.name}
-            onClick={closeMenu}
           >
             <Image
               src={siteConfig.logoImage}
@@ -123,78 +73,75 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="hidden lg:block">
-            <Link href="/#book" className="btn btn-navy">
-              Book Now
-            </Link>
-          </div>
+        <div className="hidden lg:block">
+          <Link href="/#book" className="btn btn-navy">
+            Book Now
+          </Link>
+        </div>
 
           <button
             type="button"
-            className="mobile-menu-toggle lg:hidden"
-            onClick={toggleMenu}
+            className="flex flex-col gap-[5px] p-2 lg:hidden"
+            onClick={() => setOpen(!open)}
             aria-expanded={open}
-            aria-controls="mobile-nav-panel"
             aria-label={open ? "Close menu" : "Open menu"}
           >
-            <span className="mobile-menu-icon" aria-hidden>
-              <span className={`mobile-menu-bar ${open ? "mobile-menu-bar-top-open" : ""}`} />
-              <span className={`mobile-menu-bar ${open ? "mobile-menu-bar-mid-open" : ""}`} />
-              <span className={`mobile-menu-bar ${open ? "mobile-menu-bar-bottom-open" : ""}`} />
-            </span>
+            <span
+              className={`block h-[1.5px] w-5 rounded-sm bg-navy transition-all ${
+                open ? "translate-y-[6.5px] rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`block h-[1.5px] w-5 rounded-sm bg-navy transition-all ${
+                open ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-[1.5px] w-5 rounded-sm bg-navy transition-all ${
+                open ? "-translate-y-[6.5px] -rotate-45" : ""
+              }`}
+            />
           </button>
         </div>
       </header>
 
-      <div
-        className={`mobile-nav-backdrop lg:hidden ${open ? "mobile-nav-backdrop-open" : ""}`}
-        onClick={closeMenu}
-        aria-hidden={!open}
-      />
-
-      <aside
-        id="mobile-nav-panel"
-        className={`mobile-nav-panel lg:hidden ${open ? "mobile-nav-panel-open" : ""}`}
-        aria-hidden={!open}
-        role="dialog"
-        aria-modal={open}
-        aria-label="Site navigation"
-      >
-        <nav aria-label="Mobile">
-          <p className="mobile-nav-label">Menu</p>
-          <ul className="mobile-nav-list">
-            {navLinks.map(({ href, label }, index) => (
-              <li
-                key={href}
-                className="mobile-nav-item"
-                style={{ transitionDelay: open ? `${80 + index * 40}ms` : "0ms" }}
-              >
-                <Link
-                  href={href}
-                  onClick={closeMenu}
-                  tabIndex={open ? 0 : -1}
-                  className={`mobile-nav-link ${isActive(href) ? "mobile-nav-link-active" : ""}`}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-            <li
-              className="mobile-nav-item mobile-nav-cta"
-              style={{ transitionDelay: open ? `${80 + navLinks.length * 40}ms` : "0ms" }}
-            >
-              <Link
-                href="/#book"
-                onClick={closeMenu}
-                tabIndex={open ? 0 : -1}
-                className="btn btn-amber shimmer-btn w-full"
-              >
-                Book Now
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+      {open && (
+        <>
+          <div
+            className="fixed inset-0 z-[999] bg-navy/40 backdrop-blur-sm lg:hidden"
+            onClick={() => setOpen(false)}
+            aria-hidden
+          />
+          <div className="fixed inset-y-0 right-0 z-[1001] w-full max-w-sm bg-white p-8 pt-24 shadow-xl lg:hidden">
+            <nav aria-label="Mobile">
+              <ul className="list-none space-y-1">
+                {navLinks.map(
+                  ({ href, label }) => (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-lg px-4 py-3 text-base font-semibold text-[var(--gray-600)] hover:bg-[var(--gray-50)]"
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  )
+                )}
+                <li className="pt-4">
+                  <Link
+                    href="/#book"
+                    onClick={() => setOpen(false)}
+                    className="btn btn-amber block w-full text-center"
+                  >
+                    Book Now
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </>
+      )}
     </>
   );
 }
