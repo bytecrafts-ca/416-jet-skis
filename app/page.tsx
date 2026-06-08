@@ -125,7 +125,7 @@ export default function HomePage() {
                   Briefing <span className="accent">every ride</span>
                 </>
               }
-              subtitle="18+ · G2/G · PCOC issued · PFDs included"
+              subtitle="12 on-water rules · 18+ · G2/G · PCOC issued · PFDs included"
             />
             <div className="safety-features">
               {safetyPoints.map((s) => (
@@ -135,8 +135,8 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <Link href="/safety" className="btn btn-outline mt-6 inline-flex">
-              Full safety rules
+            <Link href="/safety#on-water-rules" className="btn btn-outline mt-6 inline-flex">
+              See all 12 rules
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

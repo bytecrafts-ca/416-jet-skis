@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { ContactLinks } from "@/components/ContactLinks";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
+import { OnWaterRules } from "@/components/OnWaterRules";
 import { SafetyRegulations } from "@/components/SafetyRegulations";
 import { SectionHeader } from "@/components/SectionHeader";
 import { breadcrumbJsonLd, createPageMetadata } from "@/lib/seo";
@@ -12,7 +13,7 @@ import { safetyPoints, siteConfig } from "@/lib/site";
 export const metadata = createPageMetadata({
   title: "Safety Rules — Toronto Jet Ski Rentals",
   description:
-    "Safety requirements for 416 Jet Skis on Lake Ontario: 18+ with ID, G2/G licence, PCOC briefing, PFDs, no alcohol, weather policy, and on-water rules.",
+    "12 on-water safety rules for 416 Jet Skis on Lake Ontario — PFDs, distance from shore, guide vessel, marina idle speed, flip protocol, and licensing requirements.",
   path: "/safety",
   keywords: [
     "jet ski safety Toronto",
@@ -39,6 +40,8 @@ export default function SafetyPage() {
         }
         subtitle={siteConfig.safetyPage.intro}
       />
+
+      <OnWaterRules />
 
       <section className="section section-white">
         <div className="container-jetti">

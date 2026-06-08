@@ -114,35 +114,83 @@ export const siteConfig = {
     body: "We're Toronto locals who love the water. Every ride includes gear, a full briefing, and a maintained machine — so you can focus on the fun.",
   },
   safetyPage: {
-    intro: "Key rules for Lake Ontario. Questions? Contact us before you book.",
+    intro: "12 on-water rules plus licensing requirements. Review before you book.",
+    onWaterRulesTitle: "12 rules on the water",
+    onWaterRulesSubtitle:
+      "Every rider gets a full briefing — these are the essentials we enforce on Lake Ontario.",
+    onWaterRules: [
+      {
+        title: "Life jackets at all times",
+        body: "PFDs must be worn at all times with kill-switch keys attached.",
+      },
+      {
+        title: "Stay off shorelines",
+        body: "Keep 150 m away from all shorelines.",
+      },
+      {
+        title: "Keep your distance",
+        body: "Stay 100 m away from all jet skis, boats, and vessels.",
+      },
+      {
+        title: "No beaching",
+        body: "Do not beach the jet ski or bring it onto land.",
+      },
+      {
+        title: "Throttle = steering",
+        body: "Gas must be engaged to steer — no coasting without throttle.",
+      },
+      {
+        title: "Speed = stability",
+        body: "Flipping happens at low speeds — maintain steady momentum.",
+      },
+      {
+        title: "If tipping over, let go",
+        body: "Do not hold on for your life — release and clear the ski.",
+      },
+      {
+        title: "Board from the rear",
+        body: "If you are in the water, re-board from the rear only.",
+      },
+      {
+        title: "After a flip, call us",
+        body: "Do not start the engine after a flip — call us immediately.",
+      },
+      {
+        title: "Stay aware",
+        body: "Always be aware of your surroundings on the water.",
+      },
+      {
+        title: "Idle in the marina",
+        body: "Only idle speed in the marina — absolutely no throttle.",
+      },
+      {
+        title: "Stay with the guide vessel",
+        body: "Do not leave or return without the guide vessel.",
+      },
+    ],
+    emergencyNote: "Emergency: call 911",
     groups: [
       {
-        title: "Requirements",
+        title: "Before you ride",
         bullets: [
           "Drivers 18+ with photo ID; under-18 passengers need a guardian + waiver.",
           "Valid driver's licence (G2 or G) required to drive.",
           "Orientation provided — we issue your PCOC after our briefing.",
           "PFDs provided; wear and secure at all times.",
-        ],
-      },
-      {
-        title: "On the water",
-        bullets: [
-          "Obey speed limits, no-wake zones, and stay 30m from swimmers at speed.",
           "No alcohol or drugs — zero tolerance, no refund if violated.",
-          "We may delay or cancel for unsafe weather.",
         ],
       },
       {
-        title: "Operations",
+        title: "Operations & policies",
         bullets: [
           "Briefing, boundaries, and kill-switch lanyard required.",
           "Stay in designated areas only.",
+          "We may delay or cancel for unsafe weather.",
           "Refundable deposit; you're responsible for negligent damage.",
         ],
       },
     ],
-    closing: "Ride smart. Ride safe.",
+    closing: "Have fun and stay safe.",
   },
 } as const;
 

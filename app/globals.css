@@ -900,6 +900,105 @@ h5 {
   background: var(--cyan);
 }
 
+.safety-emergency {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem 1rem;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+}
+
+.safety-emergency-label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.safety-emergency-divider {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.safety-emergency-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.safety-emergency-phone:hover {
+  color: var(--cyan);
+}
+
+.water-rules-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.water-rule-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.water-rule-card:hover {
+  border-color: rgba(0, 180, 216, 0.25);
+  box-shadow: var(--shadow-md);
+}
+
+.water-rule-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: var(--amber);
+  color: var(--navy);
+  font-family: var(--font-display), serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.water-rule-card h3 {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+}
+
+.water-rule-card p {
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: var(--gray-500);
+  margin: 0;
+}
+
 /* Reviews */
 .reviews-summary {
   text-align: center;
@@ -1734,6 +1833,9 @@ body.mobile-nav-open .mobile-sticky-cta {
     transform: none;
   }
   .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .water-rules-grid {
     grid-template-columns: 1fr;
   }
   .gallery-grid {
