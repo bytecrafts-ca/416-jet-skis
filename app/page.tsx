@@ -34,14 +34,16 @@ export default function HomePage() {
       <JsonLd data={faqJsonLd()} />
       <header className="hero">
         <div className="hero-bg">
-          <Image
-            src={heroImage}
-            alt="416 Jet Skis — Toronto"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={siteConfig.heroImage}
+            aria-label="416 Jet Skis — Toronto jet ski rentals on Lake Ontario"
+          >
+            <source src={siteConfig.heroVideo} type="video/mp4" />
+          </video>
         </div>
         <div className="hero-overlay" />
         <div className="hero-inner container-jetti">
